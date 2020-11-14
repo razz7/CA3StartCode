@@ -53,7 +53,7 @@ public class User implements Serializable {
        return (BCrypt.checkpw(pw,userPass));
         
     }
-
+   //
   public User(String userName, String userPass) {
     this.userName = userName;
 

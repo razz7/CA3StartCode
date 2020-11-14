@@ -1,7 +1,11 @@
 package rest;
 
 import com.google.gson.Gson;
+import dto.AllDto;
+import dto.SwapiPeopleDtp;
+import dto.SwapiPlanetsDto;
 import entities.User;
+import java.io.IOException;
 import java.util.List;
 import javax.annotation.security.RolesAllowed;
 import javax.persistence.EntityManager;
@@ -15,6 +19,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.SecurityContext;
 import utils.EMF_Creator;
+import utils.HttpU;
 
 /**
  * @author lam@cphbusiness.dk
@@ -68,4 +73,23 @@ public class DemoResource {
         String thisuser = securityContext.getUserPrincipal().getName();
         return "{\"msg\": \"Hello to (admin) User: " + thisuser + "\"}";
     }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("fetch")
+    public String getFtch() throws IOException {
+    Gson gson = new Gson();
+    String swapi1 = HttpU.fetchData("https://swapi.dev/api/people/1/");
+    String swapi2 = HttpU.fetchData("https://swapi.dev/api/planets/3/");
+    SwapiPeopleDtp result1 = gson.fromJson(swapi1, SwapiPeopleDtp.class);
+    SwapiPlanetsDto result2 = gson.fromJson(swapi2, SwapiPlanetsDto.class);
+    
+    AllDto result = new AllDto(result1, result2);
+    String resultJson = gson.toJson(result);
+    return resultJson;
+    
+}
+    
+    
+    
 }
