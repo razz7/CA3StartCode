@@ -81,10 +81,13 @@ public class DemoResource {
     Gson gson = new Gson();
     String swapi1 = HttpU.fetchData("https://swapi.dev/api/people/1/");
     String swapi2 = HttpU.fetchData("https://swapi.dev/api/planets/3/");
+    String swapi3 = HttpU.fetchData("https://swapi.dev/api/planets/4/");
+    
     SwapiPeopleDtp result1 = gson.fromJson(swapi1, SwapiPeopleDtp.class);
     SwapiPlanetsDto result2 = gson.fromJson(swapi2, SwapiPlanetsDto.class);
+    SwapiPlanetsDto result3 = gson.fromJson(swapi3, SwapiPlanetsDto.class);
     
-    AllDto result = new AllDto(result1, result2);
+    AllDto result = new AllDto(result1, result2, result3);
     String resultJson = gson.toJson(result);
     return resultJson;
     

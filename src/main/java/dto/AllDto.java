@@ -13,10 +13,15 @@ public class AllDto {
     
     private String personName;
     private String planetName;
+    private String planetName2;
 
-    public AllDto(SwapiPeopleDtp personName, SwapiPlanetsDto planetName) {
+    public AllDto(SwapiPeopleDtp personName, SwapiPlanetsDto planetName, SwapiPlanetsDto planetName2) {
         this.personName = personName.getName();
         this.planetName = planetName.getName();
+        this.planetName2 = planetName2.getName();
+    }
+
+    public AllDto() {
     }
     
     
