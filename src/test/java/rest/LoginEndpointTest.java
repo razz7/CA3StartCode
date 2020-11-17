@@ -206,7 +206,7 @@ public class LoginEndpointTest {
                 .get("/info/user").then()
                 .statusCode(403)
                 .body("code", equalTo(403))
-                .body("message", equalTo("Not authenticated - do login"));
+                .body("msg", equalTo("Not authenticated - do login"));
     }
 
     @Test
@@ -218,7 +218,7 @@ public class LoginEndpointTest {
                 .get("/info/user").then()
                 .statusCode(403)
                 .body("code", equalTo(403))
-                .body("message", equalTo("Not authenticated - do login"));
+                .body("msg", equalTo("Not authenticated - do login"));
     }
 
 }

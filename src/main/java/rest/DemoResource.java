@@ -88,8 +88,8 @@ public class DemoResource {
     SwapiPeopleDtp result1 = gson.fromJson(swapi1, SwapiPeopleDtp.class);
     SwapiPlanetsDto result2 = gson.fromJson(swapi2, SwapiPlanetsDto.class);
     SwapiPlanetsDto result3 = gson.fromJson(swapi3, SwapiPlanetsDto.class);
-    SwapiPlanetsDto result4 = gson.fromJson(swapi3, SwapiPlanetsDto.class);
-    SwapiPlanetsDto result5 = gson.fromJson(swapi3, SwapiPlanetsDto.class);
+    SwapiPlanetsDto result4 = gson.fromJson(swapi4, SwapiPlanetsDto.class);
+    SwapiPlanetsDto result5 = gson.fromJson(swapi5, SwapiPlanetsDto.class);
     
     AllDto result = new AllDto(result1, result2, result3, result4, result5);
     String resultJson = gson.toJson(result);

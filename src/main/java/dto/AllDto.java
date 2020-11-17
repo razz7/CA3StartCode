@@ -24,6 +24,7 @@ public class AllDto {
         this.planetName2 = planetName2.getName();
         this.planetName3 = planetName3.getName();
         this.planetName4 = planetName4.getName();
+
     }
 
     public AllDto() {

@@ -4,17 +4,17 @@ public class ExceptionDTO {
 
     public ExceptionDTO(int code, String description) {
         this.code = code;
-        this.message = description;
+        this.msg = description;
     }
     private int code;
-    private String message;
+    private String msg;
 
     public int getCode() {
         return code;
     }
 
     public String getMessage() {
-        return message;
+        return msg;
     }
 
 }
